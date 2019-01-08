@@ -1,5 +1,6 @@
 //import the contactList component and the contactForm component
-import ContactList from "./contactList"
-import contactList from "./contactList";
+import contactList from "./contactList"
+import contactForm from "./contactForm"
 
-//contactList.listify()
+contactList.listify()
+contactForm.createAndAppendForm()

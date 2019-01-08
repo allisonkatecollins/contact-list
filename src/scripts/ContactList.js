@@ -7,20 +7,31 @@
         //(NOTE: contactBuilder is the function in contact.js)
     //3. Append to DOM
 
-import contactCollection from "./contactCollection";
+import contactCollection from "./contactCollection"
 import contact from "./contact"
 
 const contactList = {
   listify(){
+    //1. Get data
+    //the getAllContacts method will do a fetch and return a promise
+    //--return data from API
     contactCollection.getAllContacts()
+    //.then here refers to fetch call in contactCollection.js
     .then(allContacts => {
       let contactDocFragment = document.createDocumentFragment();
+      
+      //2. iterate over data and build HTML for each item
       allContacts.forEach(contactItem => {
         let contactHTML = contact.contactBuilder(contactItem)
         contactDocFragment.appendChild(contactHTML)
       })
 
+      //3. Append HTML to the DOM
       let outputArticle = document.querySelector(".output")
+
+      while (outputArticle.firstChild) {
+        outputArticle.removeChild(outputArticle.firstChild);
+      }
       outputArticle.appendChild(contactDocFragment)
 
     })

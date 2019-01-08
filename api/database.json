@@ -1,0 +1,24 @@
+{
+  "contacts": [
+    {
+      "name": "Frodo Baggins",
+      "number": "1234",
+      "address": "Hobbiton"
+    },
+    {
+      "name": "Arwen Evenstar",
+      "number": "5678",
+      "address": "Rivendale"
+    },
+    {
+      "name": "Sauron",
+      "number": "9012",
+      "address": "Mordor"
+    },
+    {
+      "name": "Legolas",
+      "number": "3456",
+      "address": "Mirkwood"
+    }
+  ]
+}
