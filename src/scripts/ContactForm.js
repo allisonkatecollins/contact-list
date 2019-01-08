@@ -71,7 +71,9 @@ const contactForm = {
   },
 
   //4. Function that executes when event happens
-  handleAddNewContact (event) {
+  //fridgify had event as an argument below but grunt wouldn't run as it wasn't
+  //defined elsewhere; removed it and grunt runs now
+  handleAddNewContact () {
     //a. get user input
     let inputContactName = document.querySelector("#contact__name").value
     let inputContactNumber = document.querySelector("#contact__number").value
@@ -84,12 +86,14 @@ const contactForm = {
       address: inputContactAddress
     }
 
-    //c. call the method (postNewContact) 
+    //c. call the method (postNewContact)
     //--fetch request: POST to the API and pass it the object we just created
     //--called contactCollection at top of this module for this step
     contactCollection.postNewContact(newContact)
+    //grunt wouldn't run until i console logged response
     .then(response => {
       contactList.listify()
+      console.log(response)
     })
   }
 }
