@@ -14,6 +14,8 @@
     //     <p>[address]</p>
     // </article>
 
+    //Given a single food object, this component builds out the HTML and returns it
+    //This HTML is then returned to the point from where this method was called
 const contact = {
   contactBuilder(contactObject) {
     let contactArticle = document.createElement("article")
